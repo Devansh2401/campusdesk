@@ -1,0 +1,16 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local SQLite databases
+server/*.db
+server/*.db-journal
+
+# Environment variables configuration
+server/.env
+
+# OS Metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Details - CampusDesk</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    <div>
+      <a href="/resources" style="font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+        ← Back to Resources
+      </a>
+    </div>
+
+    <div id="global-error" class="alert alert-danger" style="display: none; margin-bottom: 1.5rem;"></div>
+
+    <div class="detail-header-card" style="padding: 3rem; border-radius: 12px; background: var(--app-card); border: 1px solid var(--app-border); display: flex; flex-direction: column; gap: 1.25rem; box-shadow: var(--shadow-md); margin-bottom: 0.5rem; position: relative; overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span id="res-category" class="cd-badge" style="margin-bottom: 0.75rem; display: inline-block;">Category</span>
+          <h1 id="res-name" style="font-size: 2.8rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 0;">Loading Resource...</h1>
+          <p id="res-location" style="color: var(--lnm-txt-secondary); font-size: 1.05rem; display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem;">
+            
+          </p>
+        </div>
+      </div>
+
+      <p id="res-description" style="color: var(--lnm-txt-secondary); max-width: 800px; font-size: 1.02rem; line-height: 1.6; margin: 0;">
+        Loading details...
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; border-top: 1px solid var(--lnm-border); padding-top: 1.25rem; font-size: 0.9rem; color: var(--lnm-txt-secondary);">
+        <div>🕒 Operating Hours: <strong id="res-hours" style="color: var(--lnm-txt-primary);">--:-- to --:--</strong></div>
+        <div>🟢 Current Status: <strong id="res-status" style="color: var(--lnm-txt-primary);">Checking...</strong></div>
+      </div>
+    </div>
+
+    <div class="detail-layout">
+      
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+        <div class="cd-detail-card">
+          <div class="date-selector-row">
+            <h2 style="font-size: 1.25rem; font-weight: 600;">Availability Timeline</h2>
+            <div class="form-group" style="width: auto; flex-direction: row; align-items: center; gap: 0.5rem; margin: 0;">
+              <label for="timeline-date" style="margin: 0;">Date:</label>
+              <input type="date" id="timeline-date" class="form-control" style="padding: 0.4rem 0.8rem; width: 160px;">
+            </div>
+          </div>
+
+          <div class="timeline-header-info">
+            <span>Select an available slot below to pre-fill the booking form.</span>
+            <div class="timeline-legend">
+              <div class="legend-item">
+                <span class="legend-color legend-free"></span>
+                <span>Free</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color legend-own"></span>
+                <span>Your Booking</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color legend-booked"></span>
+                <span>Booked</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="timeline-loading" class="loading-spinner" style="padding: 2rem;">
+            <div class="spinner" style="width: 30px; height: 30px;"></div>
+            <p>Loading timeline slots...</p>
+          </div>
+
+          <div id="timeline-grid" class="cd-timeline-grid" style="display: none;">
+            
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <div class="cd-detail-card" style="position: sticky; top: 90px;">
+          <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Book this Resource</h2>
+          
+          <div id="form-error-banner" class="alert alert-danger" style="display: none; font-size: 0.85rem; padding: 0.5rem 0.75rem; margin-bottom: 1rem;"></div>
+
+          <form id="booking-form">
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              
+              <div class="form-group">
+                <label for="booking-start">Start Date & Time</label>
+                <input type="datetime-local" id="booking-start" class="form-control" required>
+                <span id="start-error" class="field-error" style="display: none;"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-end">End Date & Time</label>
+                <input type="datetime-local" id="booking-end" class="form-control" required>
+                <span id="end-error" class="field-error" style="display: none;"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="booking-purpose">Purpose of Booking</label>
+                <textarea id="booking-purpose" class="form-control" rows="3" placeholder="e.g. Club meeting, project demo, test recording..." required></textarea>
+                <span id="purpose-error" class="field-error" style="display: none;"></span>
+              </div>
+
+              <button type="submit" id="book-submit-btn" class="btn btn-primary" style="width: 100%;">
+                Confirm Booking
+              </button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/resource-detail.js"></script>
+</body>
+</html>

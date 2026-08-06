@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - CampusDesk</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    
+    <div class="my-bookings-hero" style="padding: 2.25rem 0; border-bottom: 1px solid var(--lnm-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem;">
+      <div>
+        <h1 style="font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin: 0;" id="user-greeting-heading">Your Reservation Agenda</h1>
+        <p style="color: var(--lnm-txt-secondary); margin-top: 0.35rem;" id="user-greeting-sub">Manage and track your active, completed, and cancelled resource reservations.</p>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='/resources'">
+        New Booking
+      </button>
+    </div>
+
+    <div id="error-banner" class="alert alert-danger" style="display: none; margin-bottom: 1rem;"></div>
+
+    <div class="bookings-tabs" id="status-tabs-container">
+      <span class="bookings-tab active" data-status="all">All</span>
+      <span class="bookings-tab" data-status="pending">Pending</span>
+      <span class="bookings-tab" data-status="confirmed">Confirmed</span>
+      <span class="bookings-tab" data-status="completed">Completed</span>
+      <span class="bookings-tab" data-status="rejected">Rejected</span>
+      <span class="bookings-tab" data-status="cancelled">Cancelled</span>
+    </div>
+
+    <div id="booking-list-container" class="booking-list">
+      
+    </div>
+
+    <div id="loading-container" class="loading-spinner" style="display: none;">
+      <div class="spinner"></div>
+      <p>Loading your bookings...</p>
+    </div>
+
+    <div id="empty-container" class="empty-state" style="display: none;">
+      <div class="empty-icon">📅</div>
+      <h3>No Bookings Found</h3>
+      <p>You do not have any bookings matching this status.</p>
+      <button class="btn btn-primary" onclick="window.location.href='/resources'" style="margin-top: 0.5rem;">Book a Resource</button>
+    </div>
+
+    <div id="pagination-container" class="pagination" style="display: none;">
+      <button id="prev-page-btn" class="pagination-btn" title="Previous Page">←</button>
+      <span id="page-info" class="pagination-info">Page 1 of 1</span>
+      <button id="next-page-btn" class="pagination-btn" title="Next Page">→</button>
+    </div>
+
+  </div>
+
+  <script src="/js/my-bookings.js"></script>
+</body>
+</html>

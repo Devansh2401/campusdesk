@@ -1,0 +1,20 @@
+{
+  "name": "campusdesk-server",
+  "version": "1.0.0",
+  "description": "Backend server for CampusDesk resource booking application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node seed.js && node server.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.13",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

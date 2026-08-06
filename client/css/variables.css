@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  --app-bg: #090d19;
+  --app-card: #0e1424;
+  --app-nav: rgba(9, 13, 25, 0.92);
+  --app-border: #1d253b;
+  --app-border-active: #5345f6;
+  --app-text: #f1f3f9;
+  --app-text-sub: #8e99b0;
+  --app-text-mute: #454d60;
+  --app-primary: #5c62f8;
+  --app-primary-hover: #474ce6;
+  --app-primary-glow: rgba(92, 98, 248, 0.16);
+  --app-success: #0f9d58;
+  --app-success-glow: rgba(15, 157, 88, 0.1);
+  --app-danger: #d93025;
+  --app-danger-glow: rgba(217, 48, 37, 0.1);
+  --app-warning: #f4b400;
+  --app-warning-glow: rgba(244, 180, 0, 0.1);
+  --app-overlay: rgba(9, 13, 25, 0.82);
+  --app-brand-gradient: linear-gradient(135deg, #ffffff, #c7d2fe);
+  --app-input-bg: #060913;
+  --app-input-focus: #0c1220;
+  --lnm-border: var(--app-border);
+  --lnm-txt-primary: var(--app-text);
+  --lnm-txt-secondary: var(--app-text-sub);
+  --lnm-txt-muted: var(--app-text-mute);
+  --cd-accent-indigo: var(--app-primary);
+  --cd-state-avail: var(--app-success);
+}
+
+[data-theme="light"] {
+  --app-bg: #f3f5f8;
+  --app-card: #ffffff;
+  --app-nav: rgba(243, 245, 248, 0.95);
+  --app-border: #ccd1db;
+  --app-border-active: #1a73e8;
+  --app-text: #202124;
+  --app-text-sub: #5f6368;
+  --app-text-mute: #9aa0a6;
+  --app-primary: #1a73e8;
+  --app-primary-hover: #1557b0;
+  --app-primary-glow: rgba(26, 115, 232, 0.08);
+  --app-success: #137333;
+  --app-success-glow: rgba(19, 115, 51, 0.08);
+  --app-danger: #c5221f;
+  --app-danger-glow: rgba(197, 34, 31, 0.08);
+  --app-warning: #b06000;
+  --app-warning-glow: rgba(176, 96, 0, 0.08);
+  --app-overlay: rgba(243, 245, 248, 0.88);
+  --app-brand-gradient: linear-gradient(135deg, #202124, #1a73e8);
+  --app-input-bg: #f3f5f8;
+  --app-input-focus: #ffffff;
+  --lnm-border: var(--app-border);
+  --lnm-txt-primary: var(--app-text);
+  --lnm-txt-secondary: var(--app-text-sub);
+  --lnm-txt-muted: var(--app-text-mute);
+  --cd-accent-indigo: var(--app-primary);
+  --cd-state-avail: var(--app-success);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--app-text);
+  line-height: 1.25;
+}
+
+body {
+  position: relative;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/campus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--app-overlay);
+  z-index: -1;
+  transition: background-color 0.25s ease;
+}
+
+a {
+  color: var(--app-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--app-primary-hover);
+}

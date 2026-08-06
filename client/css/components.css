@@ -1,0 +1,219 @@
+.btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background-color: var(--app-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--app-primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--app-border);
+  color: var(--app-text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: var(--app-border-active);
+}
+
+.btn-danger-hover:hover:not(:disabled) {
+  background-color: var(--app-danger-glow) !important;
+  border-color: var(--app-danger) !important;
+  color: var(--app-danger) !important;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--app-border);
+  color: var(--app-text-sub);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--app-primary-glow);
+  color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--app-text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-control {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--app-input-bg);
+  border: 1px solid var(--app-border);
+  color: var(--app-text);
+  padding: 0.8rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.form-control:focus {
+  border-color: var(--app-primary);
+  box-shadow: 0 0 0 3px var(--app-primary-glow);
+  background-color: var(--app-input-focus);
+}
+
+.field-error {
+  color: var(--app-danger);
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+
+.cooldown-text {
+  font-size: 0.85rem;
+  color: var(--app-text-sub);
+  text-align: center;
+}
+
+.cooldown-seconds {
+  font-weight: 700;
+  color: var(--app-primary);
+}
+
+.alert {
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.alert-danger {
+  background-color: var(--app-danger-glow);
+  color: var(--app-danger);
+  border: 1px solid rgba(217, 48, 37, 0.2);
+}
+
+.alert-success {
+  background-color: var(--app-success-glow);
+  color: var(--app-success);
+  border: 1px solid rgba(15, 157, 88, 0.2);
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem;
+  color: var(--app-text-sub);
+}
+
+.spinner {
+  width: 38px;
+  height: 38px;
+  border: 3.5px solid var(--app-border);
+  border-top-color: var(--app-primary);
+  border-radius: 50%;
+  animation: spin 0.85s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 2.5rem;
+  color: var(--app-text-sub);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 1.5px dashed var(--app-border);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.003);
+}
+
+.empty-icon {
+  font-size: 2.8rem;
+  color: var(--app-text-mute);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn {
+  background-color: var(--app-card);
+  border: 1px solid var(--app-border);
+  color: var(--app-text);
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: var(--app-border);
+  border-color: var(--app-border-active);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 0.88rem;
+  color: var(--app-text-sub);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - CampusDesk</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <div class="container">
+    
+    <div class="discover-hero" style="padding: 3rem; border-radius: 12px; background: var(--app-card); border: 1px solid var(--app-border); display: flex; flex-direction: column; gap: 0.75rem; box-shadow: var(--shadow-md); margin-bottom: 1rem;">
+      <div style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.15em; color: var(--cd-accent-indigo);">LNMIIT Booking Desk</div>
+      <h1 style="font-size: 2.8rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 0;">Discover & Reserve Campus Spaces</h1>
+      <p style="color: var(--lnm-txt-secondary); max-width: 600px; font-size: 1.02rem; line-height: 1.6; margin: 0;">Browse, search, and book LNMIIT seminar halls, music rooms, lab equipment, and more. A centralized agenda platform to coordinate student activities.</p>
+    </div>
+
+    <div class="controls-row">
+      
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="form-control search-input" placeholder="Search by name, description, or location..." autocomplete="off">
+      </div>
+
+      <div class="category-tabs" id="category-filter-container">
+        <button class="category-tab active" data-category="all">All Resources</button>
+        <button class="category-tab" data-category="hall">Halls</button>
+        <button class="category-tab" data-category="room">Rooms</button>
+        <button class="category-tab" data-category="equipment">Equipment</button>
+        <button class="category-tab" data-category="other">Other</button>
+      </div>
+    </div>
+
+    <div id="error-banner" class="alert alert-danger" style="display: none;"></div>
+
+    <div id="resources-grid-container" class="resources-grid">
+      
+    </div>
+
+    <div id="loading-container" class="loading-spinner" style="display: none;">
+      <div class="spinner"></div>
+      <p>Fetching resources...</p>
+    </div>
+
+    <div id="empty-container" class="empty-state" style="display: none;">
+      <div class="empty-icon">📁</div>
+      <h3>No Resources Found</h3>
+      <p>Try adjusting your search terms or selecting a different category.</p>
+    </div>
+
+    <div id="pagination-container" class="pagination" style="display: none;">
+      <button id="prev-page-btn" class="pagination-btn" title="Previous Page">←</button>
+      <span id="page-info" class="pagination-info">Page 1 of 1</span>
+      <button id="next-page-btn" class="pagination-btn" title="Next Page">→</button>
+    </div>
+
+  </div>
+
+  <script src="/js/resources.js"></script>
+</body>
+</html>
